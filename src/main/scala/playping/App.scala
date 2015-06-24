@@ -13,8 +13,8 @@ object App {
   class Components(context: Context) extends BuiltInComponentsFromContext(context) {
     lazy val assets = new Assets(httpErrorHandler)
 
-    lazy val pingController = new controllers.PingController
+    lazy val rootController = new controllers.RootController
 
-    lazy val router = new Routes(httpErrorHandler, pingController, assets)
+    lazy val router = new Routes(httpErrorHandler, rootController, assets)
   }
 }
