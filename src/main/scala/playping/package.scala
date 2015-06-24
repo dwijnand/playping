@@ -5,7 +5,6 @@ import java.time.ZonedDateTime
 
 package object playping
   extends PlayImplicits {
-
 }
 
 package playping {
