@@ -47,6 +47,7 @@ TaskKey[Unit]("stop") := {
   if (!pidFile.exists) sys error "App not started!"
   val pid = IO read pidFile
   s"kill $pid".!
+  pidFile.delete
   println(s"Stopped application with process ID $pid")
 }
 
