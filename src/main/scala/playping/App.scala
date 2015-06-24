@@ -14,7 +14,8 @@ object App {
     lazy val assets = new Assets(httpErrorHandler)
 
     lazy val rootController = new controllers.RootController
+    lazy val greetController = new controllers.GreetController(configuration.getString("playping.msg").get)
 
-    lazy val router = new Routes(httpErrorHandler, rootController, assets)
+    lazy val router = new Routes(httpErrorHandler, rootController, greetController, assets)
   }
 }
