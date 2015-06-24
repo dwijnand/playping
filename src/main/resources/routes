@@ -1,0 +1,2 @@
+GET         /ping                                           playping.controllers.PingController.ping
+GET         /assets/*file                                   controllers.Assets.versioned(path="/public", file: Asset)
