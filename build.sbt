@@ -33,8 +33,14 @@ routesGenerator := InjectedRoutesGenerator
 
 initialCommands in console += "\nimport playping._"
 
+parallelExecution in Test := true
+fork in Test := false
+
 fork in run := true
 cancelable in Global := true
+
+sources in (Compile, doc) := Nil
+publishArtifact in (Compile, packageDoc) := false
 
 TaskKey[Unit]("stop") := {
   val pidFile = (stagingDirectory in Universal).value / "RUNNING_PID"
