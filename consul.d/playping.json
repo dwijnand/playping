@@ -1,0 +1,13 @@
+{
+    "service": {
+        "name": "playping",
+        "tags": [
+            "v0.1.0-SNAPSHOT"
+        ],
+        "port": 9000,
+        "check": {
+            "script": "curl localhost:9000/ping >/dev/null 2>&1",
+            "interval": "10s"
+        }
+    }
+}

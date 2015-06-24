@@ -1,0 +1,5 @@
+template {
+  source = "application.conf.ctmpl"
+  destination = "target/universal/stage/conf/application.conf"
+  command = "pkill -F /tmp/playping.pid"
+}
