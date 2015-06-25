@@ -1,5 +1,3 @@
-import SbtKitPre._
-
 lazy val playping = project in file(".")
 
    name := "playping"
@@ -23,8 +21,6 @@ scalacOptions  += "-Yno-adapted-args"
 scalacOptions  += "-Ywarn-dead-code"
 scalacOptions  += "-Ywarn-numeric-widen"
 scalacOptions  += "-Ywarn-value-discard"
-
-scalacOptions in (Compile, console) -= "-Ywarn-unused-import"
 
 maxErrors := 5
 triggeredMessage := Watched.clearWhenTriggered
