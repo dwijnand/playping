@@ -3,18 +3,17 @@ lazy val playping = project in file(".")
    name := "playping"
 version := "0.1.0-SNAPSHOT"
 
-enablePlugins(PlayScala)
-disablePlugins(PlayLayoutPlugin)
-
       scalaVersion := "2.11.7"
 crossScalaVersions := Seq(scalaVersion.value)
+
+maxErrors := 5
+triggeredMessage := Watched.clearWhenTriggered
 
 scalacOptions ++= Seq("-encoding", "utf8")
 scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked", "-Xlint")
 scalacOptions  += "-language:higherKinds"
 scalacOptions  += "-language:implicitConversions"
 scalacOptions  += "-language:postfixOps"
-scalacOptions  += "-Yinline-warnings"
 scalacOptions  += "-Xfuture"
 scalacOptions  += "-Yinline-warnings"
 scalacOptions  += "-Yno-adapted-args"
@@ -22,8 +21,8 @@ scalacOptions  += "-Ywarn-dead-code"
 scalacOptions  += "-Ywarn-numeric-widen"
 scalacOptions  += "-Ywarn-value-discard"
 
-maxErrors := 5
-triggeredMessage := Watched.clearWhenTriggered
+enablePlugins(PlayScala)
+disablePlugins(PlayLayoutPlugin)
 
 routesGenerator := InjectedRoutesGenerator
 
